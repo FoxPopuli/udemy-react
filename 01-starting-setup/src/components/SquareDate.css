@@ -1,0 +1,30 @@
+:root {
+  --box-size: 100px;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  border: 1px solid white;
+  border-radius: 10px;
+
+  background-color: violet;
+
+  height: var(--box-size);
+  width: var(--box-size);
+}
+
+.day,
+.month,
+.year {
+  color: white;
+}
