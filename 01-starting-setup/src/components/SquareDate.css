@@ -17,7 +17,7 @@
   border: 1px solid white;
   border-radius: 10px;
 
-  background-color: violet;
+  background-color: var(--deep-purple);
 
   height: var(--box-size);
   width: var(--box-size);
