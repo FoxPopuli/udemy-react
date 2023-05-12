@@ -1,6 +1,6 @@
 import "./SquareDate.css";
 
-function SquareDate(props) {
+const SquareDate = (props) => {
   const month = props.date.toLocaleString("en-US", { month: "long" });
   const day = props.date.toLocaleString("en-US", { day: "2-digit" });
   const year = props.date.getFullYear();
@@ -12,6 +12,6 @@ function SquareDate(props) {
       <div className="year">{year}</div>
     </div>
   );
-}
+};
 
 export default SquareDate;
