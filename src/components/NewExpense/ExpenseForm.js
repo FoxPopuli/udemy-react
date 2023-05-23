@@ -62,6 +62,9 @@ const ExpenseForm = () => {
       date: new Date(date), // parse date string into date object
     };
     console.log(expenseData);
+    setTitle("");
+    setAmount("");
+    setDate("");
   };
 
   return (
@@ -69,13 +72,14 @@ const ExpenseForm = () => {
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
-          <input type="text" onChange={titleChangeHandler} />
+          <input type="text" value={title} onChange={titleChangeHandler} />
         </div>
 
         <div className="new-expense__control">
           <label>Amount</label>
           <input
             type="number"
+            value={amount} // two way binding
             min="0.01"
             step="0.01"
             onChange={amountChangeHandler}
@@ -84,7 +88,12 @@ const ExpenseForm = () => {
 
         <div className="new-expense__control">
           <label>Date</label>
-          <input type="date" max={maxDate} onChange={dateChangeHandler} />
+          <input
+            type="date"
+            value={date} // two way binding
+            max={maxDate}
+            onChange={dateChangeHandler}
+          />
         </div>
       </div>
       <div className="new-expense__actions">
