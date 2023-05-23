@@ -51,8 +51,21 @@ const ExpenseForm = () => {
   //       };
   //     });
 
+  const submitHandler = (event) => {
+    // By default, submitting a form sends a request to the host server
+    // which has the effect of reloading the page.
+    // preventDefault() stops this behaviour.
+    event.preventDefault();
+    const expenseData = {
+      title,
+      amount,
+      date: new Date(date), // parse date string into date object
+    };
+    console.log(expenseData);
+  };
+
   return (
-    <form>
+    <form onSubmit={submitHandler}>
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
