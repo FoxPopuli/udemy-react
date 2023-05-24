@@ -1,6 +1,6 @@
 import "./ExpenseForm.css";
 import { useState } from "react";
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
   const dateObj = new Date();
   const maxDate = `
   ${dateObj.getFullYear()}-
@@ -25,7 +25,7 @@ const ExpenseForm = () => {
   //     date: "",
   //   });
 
-  //   // Use arrow functions to ensure prevState is always the most recent state
+  //   // Use arrow function calls to ensure prevState is always the most recent state
   //   // Values are scheduled to change when the setter is called, not changed right away
   //   // Using anonymous arrow functions that return the state object
   //   // ensures the correct order of operations
@@ -56,12 +56,15 @@ const ExpenseForm = () => {
     // which has the effect of reloading the page.
     // preventDefault() stops this behaviour.
     event.preventDefault();
+
     const expenseData = {
       title,
       amount,
       date: new Date(date), // parse date string into date object
     };
-    console.log(expenseData);
+
+    props.onSaveExpenseData(expenseData);
+
     setTitle("");
     setAmount("");
     setDate("");
