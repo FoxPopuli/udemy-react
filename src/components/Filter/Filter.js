@@ -12,7 +12,7 @@ const Filter = (props) => {
       <p>Filter by year</p>
       <p>Current year: {year}</p>
       <form action="#">
-        <label for="selected-year">
+        <label>
           <select
             id="selected-year"
             name="selected-year"
