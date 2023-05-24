@@ -1,5 +1,6 @@
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
+import Filter from "./components/Filter/Filter";
 
 const App = () => {
   const expenses = [
@@ -38,9 +39,14 @@ const App = () => {
     console.log(expense);
   };
 
+  const dateFilterHandler = (date) => {
+    console.log(date);
+  };
+
   return (
     <div>
       <NewExpense onAddExpense={addExpenseHandler} />
+      <Filter onDateChange={dateFilterHandler} />
       <Expenses items={expenses} />
     </div>
   );
